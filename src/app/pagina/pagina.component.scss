@@ -1,0 +1,51 @@
+
+
+#cabecalho {
+    padding:10px;
+    background:#7950f2;
+    border-width: 1px; 
+    border-style: solid;
+    text-align: center;
+    height: 100px;
+    margin: 0px 200px 0px
+    
+    
+}
+
+#conteudo-1 {
+    float:left;
+    width:210px;
+    height: 600px;
+    padding:10px;
+    background:#ced4da;
+    border-width: 0px 1px 1px 1px;    
+    border-style: solid;
+    text-align: center;
+    margin-left: 200px;
+}
+
+#conteudo-2-1 {
+    height: 600px;
+    padding:10px;
+    border-width: 0px 1px 1px 0px; 
+    border-style: solid;
+    text-align: center;
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+#titulo {
+    color: white; 
+    font-size: 30px;  
+
+}
+
+#conteudo {
+    font-family: arial;
+    font-size: 16px; 
+}
+
+#sidebar {
+    font-size: 20px; 
+    text-transform: uppercase;
+}

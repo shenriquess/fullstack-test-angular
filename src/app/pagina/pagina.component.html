@@ -6,6 +6,40 @@
   // TODO: criar um método POST no api.service que envie o texto do input e exiba a resposta na página
 -->
 
-<h1>Título da página</h1>
 
-{{ apiGreeting }}
+<div id="geral">
+  <div id="cabecalho"><p id="titulo">Título da página</p></div>
+  <div id="principal">
+      <div id="conteudo-1">
+        <span id="sidebar">Sidebar</span>
+        <br /><br />
+        <a [routerLink]="['/start']">
+          Start
+        </a>
+      </div>
+      <div id="conteudo-2">
+        <div id="conteudo-2-1">
+          <br />
+          <span id="conteudo">{{apiGreeting}}</span>
+          <br /><br />
+          <span id="conteudo">{{apiHoras}}</span> 
+          <br /><br />
+          <form id="add-form" (ngSubmit)="f.form.valid && adicionarTexto()" #f="ngForm" >
+            <div class="form-group">
+              <label for="texto"></label>
+              <input type="text" class="form-control" size="30" id="texto" name="texto" [(ngModel)]="valor"  />
+            </div>
+            <br />
+            <div class="form-group">
+              <input type="submit" class="btnSubmit" value="Enviar" />
+            </div>
+          </form>
+          <section>
+            <br />
+            <span>{{apiInput}}</span>
+          </section>
+        </div>     
+      </div>
+  </div>
+</div>
+       

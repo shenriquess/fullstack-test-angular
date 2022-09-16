@@ -12,6 +12,9 @@ import { ApiService } from '../services/api.service';
 export class PaginaComponent implements OnInit {
 
   public apiGreeting = '';
+  public apiHoras = '';
+  public apiInput = '';
+  public valor: any;
 
   constructor(
     private apiService: ApiService
@@ -28,6 +31,37 @@ export class PaginaComponent implements OnInit {
         this.apiGreeting = response.mensagem;
       }
     });
+
+    this.apiService.getHoras().pipe(
+      catchError((err) => {
+        this.apiHoras = 'Falha na comunicação com o servidor.';
+        return [];
+      })
+    ).subscribe((response) => {
+      if (response) {
+        this.apiHoras = response.mensagem;
+        console.log(response);
+      }
+    });
+
+
+    
+
   }
 
+  adicionarTexto(): void {
+    this.apiService.adicionarTexto(this.valor).pipe(
+      catchError((err) => {
+        this.apiInput = 'Falha na comunicação com o servidor.';
+        return [];
+      })
+    ).subscribe((response) => {
+      if (response) {
+        this.apiInput = response;
+        console.log(response);
+      }
+    });
+  }
+
+  
 }
